@@ -1,13 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Underwater Bubble Adventure</title>
+ 
+</head>
+<body>
+
+  <div class="bubbles">
+    <img src="1159.jpg" alt="bubble" style="width: 50px; animation-delay: 0s;">
+    <img src="1159.jpg" alt="bubble" style="width: 60px; animation-delay: 1s;">
+  </div>
+
+  <div class="content">
+    <div class="title">Underwater Bubble Adventure</div>
+    <div class="description">
+      Dive into the depths of the ocean and collect floating bubbles as you explore the underwater world!
+      Interact with magical bubbles, avoid underwater obstacles, and aim to collect as many as you can.
+    </div>
+    <button class="start-button" onclick="startGame()">Start Game</button>
+  </div>
+
+  <script>
+   
+    function startGame() {
+      window.location.href = "bubblegame.html"; 
+    }
+  </script>
+
+</body>
 </html>
