@@ -59,6 +59,7 @@ body {
 }
 
 
+<<<<<<< HEAD
 .bubbles {
   position: absolute;
   top: 10%;
@@ -74,3 +75,12 @@ body {
   0% { transform: translateY(0) scale(1); opacity: 0.7; }
   100% { transform: translateY(-100px) scale(1.5); opacity: 0.1; }
 }
+=======
+  @keyframes floatBubbles {
+    0% { transform: translateY(0) scale(1); opacity: 0.7; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0.1; }
+  }
+
+  a-scene{
+    }
+>>>>>>> 50f4997d23dde99084539f5d6837f01c5b4ecb2c
