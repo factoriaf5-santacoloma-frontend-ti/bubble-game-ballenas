@@ -3882,14 +3882,12 @@
       "buffer": 0,
       "byteLength": 355908,
       "byteOffset": 1398860,
-      "byteStride": 12,
       "name": "floatBufferViews"
     },
     {
       "buffer": 0,
       "byteLength": 793888,
       "byteOffset": 1754768,
-      "byteStride": 16,
       "name": "floatBufferViews"
     }
   ],
