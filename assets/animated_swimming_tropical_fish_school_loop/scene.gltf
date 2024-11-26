@@ -10336,58 +10336,58 @@
   ],
   "images": [
     {
-      "uri": "textures/material_0_diffuse.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/assets/animated_swimming_tropical_fish_school_loop/textures/material_0_diffuse.png"
     },
     {
-      "uri": "textures/material_0_specularGlossiness.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/assets/animated_swimming_tropical_fish_school_loop/textures/material_0_specularGlossiness.png"
     },
     {
-      "uri": "textures/material_0_emissive.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/assets/animated_swimming_tropical_fish_school_loop/textures/material_0_emissive.png"
     },
     {
-      "uri": "textures/material_0_normal.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/assets/animated_swimming_tropical_fish_school_loop/textures/material_0_normal.png"
     },
     {
-      "uri": "textures/material_0_occlusion.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/assets/animated_swimming_tropical_fish_school_loop/textures/material_0_occlusion.png"
     },
     {
-      "uri": "textures/material_1_diffuse.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_1_diffuse.png"
     },
     {
-      "uri": "textures/material_1_specularGlossiness.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_1_specularGlossiness.png"
     },
     {
-      "uri": "textures/material_1_normal.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_1_normal.png"
     },
     {
-      "uri": "textures/material_1_occlusion.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_1_occlusion.png"
     },
     {
-      "uri": "textures/material_2_diffuse.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_2_diffuse.png"
     },
     {
-      "uri": "textures/material_2_specularGlossiness.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_2_specularGlossiness.png"
     },
     {
-      "uri": "textures/material_2_normal.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_2_normal.png"
     },
     {
-      "uri": "textures/material_2_occlusion.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_2_occlusion.png"
     },
     {
-      "uri": "textures/material_3_diffuse.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_3_diffuse.png"
     },
     {
-      "uri": "textures/material_3_specularGlossiness.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_3_specularGlossiness.png"
     },
     {
-      "uri": "textures/material_3_emissive.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_3_emissive.png"
     },
     {
-      "uri": "textures/material_3_normal.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_3_normal.png"
     },
     {
-      "uri": "textures/material_3_occlusion.png"
+      "uri": "/assets/animated_swimming_tropical_fish_school_loop/textures/material_3_occlusion.png"
     }
   ],
   "materials": [
@@ -13406,7 +13406,7 @@
       "skeleton": 6
     }
   ],
-  "textures": [
+  /assets/animated_swimming_tropical_fish_school_loop/textures": [
     {
       "sampler": 0,
       "source": 0
