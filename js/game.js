@@ -1,4 +1,4 @@
-const corals = ["coral0", "coral1", "coral2", "coral3", "coral4", "coral5", "coral6", "coral7", "coral8", "coral9", "alga"];
+const corals = ["coral0", "coral1", "coral2", "coral3", "coral4", "coral5", "coral6", "coral7", "coral8", "coral9"];
 const scene = document.querySelector('a-scene');
 
 function addCorals(coralRandom) {
@@ -14,7 +14,7 @@ function addCorals(coralRandom) {
         
         const x = (Math.random() - 0.5) * 500;
         const z = (Math.random() - 0.5) * 500; 
-        const y = -1.5; 
+        const y = -2; 
         
         coral.setAttribute('position', `${x} ${y} ${z}`);
         const rotationY = Math.random() * 360; 
@@ -28,3 +28,28 @@ function addCorals(coralRandom) {
 }
 
 addCorals(500);
+
+function addRandomAlga(numAlgas) {
+    const scene = document.querySelector('a-scene');
+
+    for (let i = 0; i < numAlgas; i++) {
+      
+      const alga = document.createElement('a-entity');
+      
+      alga.setAttribute('gltf-model', '#alga');
+      
+      const x = (Math.random() - 0.5) * 700;  
+      const z = (Math.random() - 0.5) * 700; 
+      const y = -1.5;
+      
+      alga.setAttribute('position', `${x} ${y} ${z}`);
+      
+      
+      const scale = Math.random() * 0.5 + 0.5; 
+      alga.setAttribute('scale', `${scale} ${scale} ${scale}`);
+      
+      scene.appendChild(alga);
+    }
+}
+
+addRandomAlga(30);
