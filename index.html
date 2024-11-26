@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="style.css">
   <title>Underwater Bubble Adventure</title>
+ 
 </head>
 <body>
 
@@ -13,8 +14,8 @@
       <a-assets>
         <a-asset-item id="blue_whale" src="assets/3D/blue_whale/scene.gltf"></a-asset-item>
       </a-assets>
-      <a-camera position="-5 -2 20"></a-camera>
-      <a-entity gltf-model="#blue_whale" rotation="0 -45 0" animation-mixer></a-entity>
+      <a-entity gltf-model="#blue_whale" rotation="0 -45 0"></a-entity>
+      <a-camera position="-5 -2 20" ></a-camera>
     </a-scene>
   </div>
 
@@ -24,7 +25,7 @@
       Dive into the depths of the ocean and collect floating bubbles as you explore the underwater world!
       Interact with magical bubbles, avoid underwater obstacles, and aim to collect as many as you can.
     </div>
-    <a href="vistas/game.html"><button class="start-button" onclick="">Start Game</button></a>
+    <button class="start-button" onclick="startGame()">Start Game</button>
   </div>
 
 <script type="module" src="./main.js"></script>
