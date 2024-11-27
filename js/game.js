@@ -77,5 +77,5 @@ function addRandomPeces(numPeces) {
     }
 }
 
-addRandomPeces(3);
+addRandomPeces(5);
 
