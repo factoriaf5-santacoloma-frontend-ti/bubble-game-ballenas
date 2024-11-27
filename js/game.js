@@ -79,3 +79,45 @@ function addRandomPeces(numPeces) {
 
 addRandomPeces(10);
 
+const medusas = [
+    { x: 0, y: 0, z: -30 },    // Frente
+    { x: 0, y: 0, z: 30 },     // Atrás
+    { x: 30, y: 0, z: 0 },     // Derecha
+    { x: -30, y: 0, z: 0 },    // Izquierda
+    { x: 20, y: 0, z: 20 },    // Diagonal derecha atrás
+    { x: 20, y: 0, z: -20 },   // Diagonal derecha frente
+    { x: -20, y: 0, z: -20 },  // Diagonal izquierda frente
+    { x: -20, y: 0, z: 20 }    // Diagonal izquierda atrás
+  ];
+
+  let score = 0;
+
+  // Función para inicializar las medusas en las órbitas
+  function initScene() {
+    const orbitas = document.querySelectorAll('.orbit');
+
+    orbitas.forEach(orbit => {
+      medusas.forEach(pos => {
+        const medusa = document.createElement('a-entity');  // Crear la medusa
+
+        medusa.setAttribute('gltf-model', '#medusas');
+        medusa.setAttribute('class', 'medusa');
+        medusa.object3D.position.set(pos.x, pos.y, pos.z);  // Posicionar la medusa
+        medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');  // Usar cuerpo dinámico pero sin gravedad
+
+        // Detectar la colisión entre la red y las medusas
+        medusa.addEventListener('collide', function (e) {
+          if (e.detail.body.el.id === 'red') {  // Verifica si la colisión es con la red
+            medusa.parentNode.removeChild(medusa);  // Eliminar la medusa
+            const scoreText = document.getElementById('score-text');  // Seleccionar el texto de puntuación
+            scoreText.setAttribute('value', `${++score} medusas cazadas`);  // Actualizar el puntaje
+          }
+        });
+
+        orbit.appendChild(medusa);  // Añadir la medusa a la órbita
+      });
+    });
+  }
+
+  // Llamar a la función de inicialización
+  initScene();
