@@ -6,17 +6,20 @@
     <title>Game</title>
 </head>
 <body>
-    <a-scene background="color: #FAFAFA">
-        <a-sky src="/assets/agua2.jpg"></a-sky>
+    <a-scene renderer="gammaOutput: true; toneMapping: ACESFilmic">
+        <a-sky src="/assets/Agua2.jpg"></a-sky>
 
         <a-plane 
         src="/assets/ocean_baseColor.jpeg"
         position="0 -2 -5" 
         rotation="-90 0 0" 
-        width="700" 
-        height="700" 
+        width="500" 
+        height="500" 
         material="repeat: 50 50;">
       </a-plane>
+    
+      <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+      
        
       <a-assets>
         <a-asset-item id="coral1" src="/assets/coral/coral-amarillo-conos-grante/coral-amarillo-conos-grante.gltf"></a-asset-item>
@@ -30,10 +33,50 @@
         <a-asset-item id="coral9" src="/assets/coral/coral-tres-sepalado/coral-tres-sepalado.gltf"></a-asset-item>
         <a-asset-item id="coral0" src="/assets/coral/coral-verde-sirguro/coral-verde-sirguro.gltf"></a-asset-item>
         <a-asset-item id="alga" src="/assets/alga/alga.gltf"></a-asset-item>
-        <a-asset-item id="peces" src="/assets/animated_swimming_tropical_fish_school_loop/scene.gltf"></a-asset-item>
+        <a-asset-item id="peces" src="/assets/peces/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <a-entity gltf-model="#alga" position="0 -2 0" ></a-entity>
+      <a-entity gltf-model="#peces" 
+        scale="10 10 10" 
+        position="2 -1 -3" 
+        animation-mixer 
+        material="metalness: 0; roughness: 0.5;" 
+        shadow="cast: true; receive: true">
+      </a-entity>
+
+      <a-entity gltf-model="#peces" 
+        scale="10 10 10" 
+        position="90 4 -50" 
+        animation-mixer 
+        material="metalness: 0; roughness: 0.5;" 
+        shadow="cast: true; receive: true">
+      </a-entity>
+
+      <a-entity gltf-model="#peces" 
+        scale="10 10 10" 
+        position="-45 2 -10" 
+        animation-mixer 
+        material="metalness: 0; roughness: 0.5;" 
+        shadow="cast: true; receive: true">
+      </a-entity>
+
+      <a-entity gltf-model="#peces" 
+        scale="10 10 10" 
+        position="135 1 -25" 
+        animation-mixer 
+        material="metalness: 0; roughness: 0.5;" 
+        shadow="cast: true; receive: true">
+      </a-entity>
+
+      <a-entity gltf-model="#peces" 
+        scale="10 10 10" 
+        position="50 0 -5" 
+        animation-mixer 
+        material="metalness: 0; roughness: 0.5;" 
+        shadow="cast: true; receive: true">
+      </a-entity>
+
+
 
       
 
