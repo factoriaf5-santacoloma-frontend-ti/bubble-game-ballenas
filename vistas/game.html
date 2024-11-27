@@ -17,8 +17,18 @@
         height="500" 
         material="repeat: 50 50;">
       </a-plane>
+
+      <a-water color="#4DA6FF" 
+        width="500" 
+        height="500" 
+        position="0 0 0" 
+        rotation="-90 0 0"
+        opacity="0.8">
+      </a-water>
     
-      <a-light type="ambient" color="#ffffff" intensity="0.5"></a-light>
+      <a-light type="ambient" color="#88CCFF" intensity="0.5"></a-light>
+      <a-light type="directional" color="#AADDF0" intensity="0.3" position="0 5 0"></a-light>
+      <a-camera position="0 3 5" rotation="0 0 0"></a-camera>
       
        
       <a-assets>
@@ -36,6 +46,8 @@
         <a-asset-item id="peces" src="/assets/peces/scene.gltf"></a-asset-item>
       </a-assets>
 
+      <a-entity particle-system="preset: snow; color: #4DA6FF; particleCount: 100;"></a-entity>
+      <a-entity></a-entity>
 
       
 
