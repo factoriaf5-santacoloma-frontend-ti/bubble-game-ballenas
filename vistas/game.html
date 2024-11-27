@@ -4,23 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game</title>
-</head>
-<body>
+  </head>
+  <body>
     <a-scene renderer="gammaOutput: true; toneMapping: ACESFilmic">
-        <a-sky src="/assets/Agua2.jpg"></a-sky>
+      <a-light type="ambient" color="#004466" intensity="0.7"></a-light>
+      <a-light type="directional" color="#4DA6FF" intensity="0.3" position="0 10 -10"></a-light>
 
-        <a-plane 
-        src="/assets/ocean_baseColor.jpeg"
-        position="0 -2 -5" 
-        rotation="-90 0 0" 
-        width="500" 
-        height="500" 
-        material="repeat: 50 50;">
-      </a-plane>
-    
-      <a-light type="ambient" color="#ffffff" intensity="0.5" position=" 0 25 0"></a-light>
-      
-       
       <a-assets>
         <a-asset-item id="coral1" src="/assets/coral/coral-amarillo-conos-grante/coral-amarillo-conos-grante.gltf"></a-asset-item>
         <a-asset-item id="coral2" src="/assets/coral/coral-amarillo-prano/coral-amarillo-prano.gltf"></a-asset-item>
@@ -34,9 +23,56 @@
         <a-asset-item id="coral0" src="/assets/coral/coral-verde-sirguro/coral-verde-sirguro.gltf"></a-asset-item>
         <a-asset-item id="alga" src="/assets/alga/alga.gltf"></a-asset-item>
         <a-asset-item id="peces" src="/assets/peces/scene.gltf"></a-asset-item>
+        <a-asset-item id="medusas" src="/assets/jellyfish_003/scene.gltf"></a-asset-item>
+        <a-asset-item id="red" src="/assets/red2.0/red2.0.gltf"></a-asset-item>
       </a-assets>
 
+      <a-sky src="/assets/Agua2.jpg"></a-sky>
 
+      <a-plane 
+        src="/assets/ocean_baseColor.jpeg"
+        position="0 -2 -5" 
+        rotation="-90 0 0" 
+        width="500" 
+        height="500" 
+        material="repeat: 50 50;">
+      </a-plane>
+    
+
+      <a-camera position="0 3 5" rotation="0 0 0" look-controls wasd-controls>
+        
+        <a-entity 
+          gltf-model="#red" 
+          position="0 -0.5 -1"  
+          rotation="0 0 0"
+          dynamic-body="shape: box; mass: 1;">
+        </a-entity>
+
+        <a-text 
+        text="value: 0 medusas cazadas; color: white; align: center; width: 4;" 
+        position="0 1 -1.5">
+        </a-text>
+        <a-entity
+        ></a-entity>
+      </a-camera>
+    
+      <a-light type="ambient" color="#ffffff" intensity="0.5" position=" 0 25 0"></a-light>
+
+      <a-entity class="orbit" position="0 3 0" rotation="0 0 0"
+        animation="property: rotation; to: 0 360 360; loop: true; dur: 40000; easing: linear">
+      </a-entity>
+
+      <a-entity class="orbit" position="0 0 0" rotation="0 0 -45"
+        animation="property: rotation; to: 0 -360 0; loop: true; dur: 30000; easing: linear">
+      </a-entity>
+      
+      <a-entity class="orbit" position="0 -3 0" rotation="0 0 -90"
+        animation="property: rotation; to: 0 360 360; loop: true; dur: 20000; easing: linear">
+      </a-entity>
+
+      <a-entity class="orbit" position="0 0 0" rotation="0 0 -120"
+        animation="property: rotation; to: 360 -360 0; loop: true; dur: 50000; easing: linear">
+      </a-entity>
       
 
     </a-scene>
