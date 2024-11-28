@@ -1,3 +1,4 @@
+import AFRAME from 'aframe';
 const corals = ["coral0", "coral1", "coral2", "coral3", "coral4", "coral5", "coral6", "coral7", "coral8", "coral9"];
 const scene = document.querySelector('a-scene');
 
@@ -80,44 +81,61 @@ function addRandomPeces(numPeces) {
 addRandomPeces(10);
 
 const medusas = [
-    { x: 0, y: 0, z: -30 },    // Frente
-    { x: 0, y: 0, z: 30 },     // Atrás
-    { x: 30, y: 0, z: 0 },     // Derecha
-    { x: -30, y: 0, z: 0 },    // Izquierda
-    { x: 20, y: 0, z: 20 },    // Diagonal derecha atrás
-    { x: 20, y: 0, z: -20 },   // Diagonal derecha frente
-    { x: -20, y: 0, z: -20 },  // Diagonal izquierda frente
-    { x: -20, y: 0, z: 20 }    // Diagonal izquierda atrás
-  ];
+    { x: 0, y: 0, z: -30 },
+    { x: 0, y: 0, z: 30 },
+    { x: 30, y: 0, z: 0 },
+    { x: -30, y: 0, z: 0 },
+    { x: 20, y: 0, z: 20 },
+    { x: 20, y: 0, z: -20 },
+    { x: -20, y: 0, z: -20 },
+    { x: -20, y: 0, z: 20 },
+];
+  
+let score = 0;
+  
+// Función para inicializar las medusas
+function initScene() {
+const orbitas = document.querySelectorAll('.orbit');
 
-  let score = 0;
+orbitas.forEach((orbit) => {
+    medusas.forEach((pos) => {
+    const medusa = document.createElement('a-entity');
 
-  // Función para inicializar las medusas en las órbitas
-  function initScene() {
-    const orbitas = document.querySelectorAll('.orbit');
+    medusa.setAttribute('gltf-model', '#medusas');
+    medusa.setAttribute('class', 'medusa');
+    medusa.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
+    medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');
 
-    orbitas.forEach(orbit => {
-      medusas.forEach(pos => {
-        const medusa = document.createElement('a-entity');  // Crear la medusa
-
-        medusa.setAttribute('gltf-model', '#medusas');
-        medusa.setAttribute('class', 'medusa');
-        medusa.object3D.position.set(pos.x, pos.y, pos.z);  // Posicionar la medusa
-        medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');  // Usar cuerpo dinámico pero sin gravedad
-
-        // Detectar la colisión entre la red y las medusas
-        medusa.addEventListener('collide', function (e) {
-          if (e.detail.body.el.id === 'red') {  // Verifica si la colisión es con la red
-            medusa.parentNode.removeChild(medusa);  // Eliminar la medusa
-            const scoreText = document.getElementById('score-text');  // Seleccionar el texto de puntuación
-            scoreText.setAttribute('value', `${++score} medusas cazadas`);  // Actualizar el puntaje
-          }
-        });
-
-        orbit.appendChild(medusa);  // Añadir la medusa a la órbita
-      });
+    medusa.addEventListener('collide', function (e) {
+        if (e.detail.body.el.id === 'red') {
+        medusa.parentNode.removeChild(medusa);
+        const scoreText = document.getElementById('score-text');
+        if (scoreText) {
+            scoreText.setAttribute('value', `${++score} medusas cazadas`);
+        }
+        }
     });
-  }
 
-  // Llamar a la función de inicialización
-  initScene();
+    orbit.appendChild(medusa);
+    });
+});
+}
+  
+  // Llamar a la función después de que el DOM esté listo
+window.addEventListener('DOMContentLoaded', () => {
+    initScene();
+});
+
+// Componente para interacción por clic
+AFRAME.registerComponent('shootable', {
+init: function () {
+    this.el.addEventListener('click', () => {
+    const scoreText = document.getElementById('score-text');
+    if (scoreText) {
+        scoreText.setAttribute('value', `${++score} medusas cazadas`);
+    }
+    this.el.parentNode.removeChild(this.el);
+    });
+},
+});
+  

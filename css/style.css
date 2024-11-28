@@ -1,4 +1,5 @@
 body {
+<<<<<<< HEAD
   margin: 0;
   font-family: Arial, sans-serif;
   color: white;
@@ -76,50 +77,88 @@ body {
   0% {
     transform: translateY(0) scale(1);
     opacity: 0.7;
+=======
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #00aaff, #003366); 
+>>>>>>> ec15358b6d08174b5159bcde23cd22b77a37f584
   }
-  100% {
-    transform: translateY(-100px) scale(1.5);
-    opacity: 0.1;
-  }
-}
 
-/* Responsive Design */
-@media (max-width: 768px) {
   .title {
-    font-size: 36px; /* Smaller font size for mobile */
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: lightblue;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(0, 181, 226, 0.5);
   }
 
   .description {
-    font-size: 16px; /* Reduce font size for readability */
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #8ab6d6;
+    max-width: 600px;
+    line-height: 1.5;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.3);
   }
 
   .start-button {
-    padding: 10px 20px; /* Smaller button size */
-    font-size: 18px;
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #00b5e2;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .start-button:hover {
+    background-color: #009fbf;
+    transform: scale(1.05);
+  }
+
+  .start-button:active {
+    transform: scale(1);
   }
 
   .content {
-    bottom: 5%; /* Reduce bottom spacing */
-    padding: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 28px;
+    position: absolute;
+    bottom: 30px;  
+    left: 20px;  
+    text-align: left; 
   }
 
-  .description {
-    font-size: 14px;
+  
+  .bubbles {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: floatBubbles 4s infinite ease-in-out;
   }
 
-  .start-button {
-    padding: 8px 16px;
-    font-size: 16px;
+  @keyframes floatBubbles {
+    0% { transform: translateY(0) scale(1); opacity: 0.7; }
+    100% { transform: translateY(-100px) scale(1.5); opacity: 0.1; }
   }
+<<<<<<< HEAD
 
   .content {
     padding: 5px;
   }
 }
+=======
+>>>>>>> ec15358b6d08174b5159bcde23cd22b77a37f584
