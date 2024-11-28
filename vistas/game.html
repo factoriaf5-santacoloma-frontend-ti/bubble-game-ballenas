@@ -6,7 +6,7 @@
     <title>Game</title>
   </head>
   <body>
-    <a-scene renderer="gammaOutput: true; toneMapping: ACESFilmic">
+    <a-scene>
       <a-light type="ambient" color="#004466" intensity="0.7"></a-light>
       <a-light type="directional" color="#4DA6FF" intensity="0.3" position="0 10 -10"></a-light>
 
@@ -33,19 +33,21 @@
         src="/assets/ocean_baseColor.jpeg"
         position="0 -2 -5" 
         rotation="-90 0 0" 
-        width="500" 
-        height="500" 
-        material="repeat: 50 50;">
+        width="300" 
+        height="300" 
+        material="repeat: 30 30;">
       </a-plane>
     
 
       <a-camera position="0 3 5" rotation="0 0 0" look-controls wasd-controls>
         
         <a-entity 
+          cursor="fuse: true; fuseTimeout: 500"
           gltf-model="#red" 
           position="0 -0.5 -1"  
           rotation="0 0 0"
-          dynamic-body="shape: box; mass: 1;">
+          dynamic-body="shape: box; mass: 1;"
+          laser-controls raycaster="objects: .links; far: 5">
         </a-entity>
 
         <a-text 

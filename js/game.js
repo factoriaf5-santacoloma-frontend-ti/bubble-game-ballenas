@@ -78,7 +78,7 @@ function addRandomPeces(numPeces) {
     }
 }
 
-addRandomPeces(10);
+addRandomPeces(6);
 
 const medusas = [
     { x: 0, y: 0, z: -30 },
@@ -105,6 +105,7 @@ orbitas.forEach((orbit) => {
     medusa.setAttribute('class', 'medusa');
     medusa.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
     medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');
+    medusa.setAttribute('animation-mixer', '');
 
     medusa.addEventListener('collide', function (e) {
         if (e.detail.body.el.id === 'red') {
