@@ -28,7 +28,7 @@ function addCorals(coralRandom) {
     }
 }
 
-addCorals(200);
+addCorals(100);
 
 function addRandomAlga(numAlgas) {
     const scene = document.querySelector('a-scene');
@@ -53,7 +53,7 @@ function addRandomAlga(numAlgas) {
     }
 }
 
-addRandomAlga(40)
+addRandomAlga(20)
 
 function addRandomPeces(numPeces) {
     const scene = document.querySelector('a-scene');
@@ -72,15 +72,31 @@ function addRandomPeces(numPeces) {
       const y = Math.random() * 5 + 0.5; 
 
       pez.setAttribute('position', `${x} ${y} ${z}`);
-
+      
       
       scene.appendChild(pez);
     }
-}
+  }
+  
+  addRandomPeces(4);
+  
+  AFRAME.registerComponent('visible-only-in-view', {
+    tick: function () {
+      const camera = document.querySelector('[camera]');
+      const objPosition = this.el.object3D.position;
+      const cameraPosition = camera.object3D.position;
+      const distance = cameraPosition.distanceTo(objPosition);
+  
+      // 如果物体太远，则隐藏
+      if (distance > 100) {
+        this.el.setAttribute('visible', 'false');
+      } else {
+        this.el.setAttribute('visible', 'true');
+      }
+    },
+  });
 
-addRandomPeces(6);
-
-const medusas = [
+  const medusas = [
     { x: 0, y: 0, z: -30 },
     { x: 0, y: 0, z: 30 },
     { x: 30, y: 0, z: 0 },
