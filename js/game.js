@@ -96,8 +96,6 @@ function addRandomPeces(numPeces) {
     },
   });
 
-  
-
   const medusas = [
     { x: 0, y: 0.002, z: -30 },
     { x: 0, y: 0.002, z: 30 },
@@ -165,14 +163,17 @@ function initScene() {
 window.addEventListener('DOMContentLoaded', () => {
     initScene();
 });
-// Componente para interacción por clic
-medusa.addEventListener('collide', function (e) {
-  if (e.detail.body.el.id === 'red') { // 检测与特定 ID 的物体碰撞
-      medusa.parentNode.removeChild(medusa); // 删除碰撞的水母
-      const scoreText = document.getElementById('score-text'); // 获取分数文本
-      if (scoreText) {
-          scoreText.setAttribute('value', `${++score} medusas cazadas`); // 更新分数
-      }
-  }
-});
 
+// Componente para interacción por clic
+AFRAME.registerComponent('shootable', {
+init: function () {
+    this.el.addEventListener('click', () => {
+    const scoreText = document.getElementById('score-text');
+    if (scoreText) {
+        scoreText.setAttribute('value', `${++score} medusas cazadas`);
+    }
+    this.el.parentNode.removeChild(this.el);
+    });
+},
+});
+  
