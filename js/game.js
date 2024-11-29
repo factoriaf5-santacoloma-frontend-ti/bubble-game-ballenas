@@ -96,65 +96,83 @@ function addRandomPeces(numPeces) {
     },
   });
 
+  
+
   const medusas = [
-    { x: 0, y: 25, z: -30 },
-    { x: 0, y: 25, z: 30 },
-    { x: 30, y: 25, z: 0 },
-    { x: -30, y: 25, z: 0 },
-    { x: 20, y: 25, z: 20 },
-    { x: 20, y: 25, z: -20 },
-    { x: -20, y: 25, z: -20 },
-    { x: -20, y: 25, z: 20 },
+    { x: 0, y: 0.002, z: -30 },
+    { x: 0, y: 0.002, z: 30 },
+    { x: 30, y: 0.003, z: 0 },
+    { x: -30, y: 0.003, z: 0 },
+    { x: 20, y: 0.05, z: 20 },
+    { x: 20, y: 0.05, z: -20 },
+    { x: -20, y: 0.005, z: -20 },
+    { x: -20, y: 0.005, z: 20 },
 ];
   
 let score = 0;
   
 // Función para inicializar las medusas
 function initScene() {
-const orbitas = document.querySelectorAll('.orbit');
+  const orbitas = document.querySelectorAll('.orbit');
 
-orbitas.forEach((orbit) => {
-    medusas.forEach((pos) => {
-    const medusa = document.createElement('a-entity');
+  orbitas.forEach((orbit) => {
+      medusas.forEach((pos) => {
+          const medusa = document.createElement('a-entity');
 
-    medusa.setAttribute('gltf-model', '#medusas');
-    medusa.setAttribute('class', 'medusa');
-    medusa.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
-    medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');
-    medusa.setAttribute('animation-mixer', '');
+          medusa.setAttribute('gltf-model', '#medusas');
+          medusa.setAttribute('class', 'medusa');
+          medusa.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
+          medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');
+          medusa.setAttribute('animation-mixer', '');
 
-    medusa.addEventListener('collide', function (e) {
-        if (e.detail.body.el.id === 'red') {
-        medusa.parentNode.removeChild(medusa);
-        const scoreText = document.getElementById('score-text');
-        if (scoreText) {
-            scoreText.setAttribute('value', `${++score} medusas cazadas`);
-        }
-        }
-    });
+          // 添加平滑游动动画
+          medusa.setAttribute('animation__move', `
+            property: position; 
+            to: ${pos.x + (Math.random() * 10 - 5)} ${pos.y + (Math.random() * 2 - 1)} ${pos.z + (Math.random() * 10 - 5)}; 
+            loop: true; 
+            dur: ${3000 + Math.random() * 2000}; 
+            easing: easeInOutSine; 
+            dir: alternate
+          `);
 
-    orbit.appendChild(medusa);
-    });
-});
+          // 添加旋转动画
+          medusa.setAttribute('animation__rotate', `
+            property: rotation; 
+            to: 0 ${Math.random() * 360} 0; 
+            loop: true; 
+            dur: ${5000 + Math.random() * 2000}; 
+            easing: easeInOutSine; 
+            dir: alternate
+          `);
+
+          medusa.addEventListener('collide', function (e) {
+              if (e.detail.body.el.id === 'red') {
+                  medusa.parentNode.removeChild(medusa);
+                  const scoreText = document.getElementById('score-text');
+                  if (scoreText) {
+                      scoreText.setAttribute('value', `${++score} medusas cazadas`);
+                  }
+              }
+          });
+
+          orbit.appendChild(medusa);
+      });
+  });
 }
-
 
   
   // Llamar a la función después de que el DOM esté listo
 window.addEventListener('DOMContentLoaded', () => {
     initScene();
 });
-
 // Componente para interacción por clic
-AFRAME.registerComponent('shootable', {
-init: function () {
-    this.el.addEventListener('click', () => {
-    const scoreText = document.getElementById('score-text');
-    if (scoreText) {
-        scoreText.setAttribute('value', `${++score} medusas cazadas`);
-    }
-    this.el.parentNode.removeChild(this.el);
-    });
-},
+medusa.addEventListener('collide', function (e) {
+  if (e.detail.body.el.id === 'red') { // 检测与特定 ID 的物体碰撞
+      medusa.parentNode.removeChild(medusa); // 删除碰撞的水母
+      const scoreText = document.getElementById('score-text'); // 获取分数文本
+      if (scoreText) {
+          scoreText.setAttribute('value', `${++score} medusas cazadas`); // 更新分数
+      }
+  }
 });
-  
+
