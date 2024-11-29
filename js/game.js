@@ -97,14 +97,14 @@ function addRandomPeces(numPeces) {
   });
 
   const medusas = [
-    { x: 0, y: 0, z: -30 },
-    { x: 0, y: 0, z: 30 },
-    { x: 30, y: 0, z: 0 },
-    { x: -30, y: 0, z: 0 },
-    { x: 20, y: 0, z: 20 },
-    { x: 20, y: 0, z: -20 },
-    { x: -20, y: 0, z: -20 },
-    { x: -20, y: 0, z: 20 },
+    { x: 0, y: 25, z: -30 },
+    { x: 0, y: 25, z: 30 },
+    { x: 30, y: 25, z: 0 },
+    { x: -30, y: 25, z: 0 },
+    { x: 20, y: 25, z: 20 },
+    { x: 20, y: 25, z: -20 },
+    { x: -20, y: 25, z: -20 },
+    { x: -20, y: 25, z: 20 },
 ];
   
 let score = 0;
@@ -137,6 +137,8 @@ orbitas.forEach((orbit) => {
     });
 });
 }
+
+
   
   // Llamar a la función después de que el DOM esté listo
 window.addEventListener('DOMContentLoaded', () => {
