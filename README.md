@@ -36,12 +36,6 @@ Ready to dive into the depths of the ocean? Click the button below to start your
 - **GLTF Models**: [GLTF Documentation](https://www.khronos.org/gltf/) – For realistic 3D models like fish, whales, and coral reefs.
 - **CSS**: For styling the interface and making it visually appealing.
 
----
-
-### 📜 **Credits**:
-- **Art and 3D Models**: Created by [YourName](https://yourportfolio.com).
-- **Game Development**: Built with ❤️ by [YourGitHub](https://github.com/yourusername).
-- **Sound Effects**: [Source](https://freesound.org).
 
 ---
 
