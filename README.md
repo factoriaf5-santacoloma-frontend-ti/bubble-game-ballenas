@@ -2,7 +2,9 @@
 
 Welcome to the **Underwater Bubble Adventure**! 🌊 Dive deep into the ocean, collect magical bubbles, and avoid dangerous obstacles while exploring the mysterious underwater world. It's an exciting, fun-filled journey beneath the waves. Can you catch all the bubbles?
 
-![Underwater Bubble Adventure GIF](https://media.giphy.com/media/3ohs4y5pyrzhlUJxhG/giphy.gif)
+![Underwater Bubble Adventure GIF](![Screenshot from 2024-12-02 10-24-22](https://github.com/user-attachments/assets/cce4b8b1-c9e1-45e5-b901-853984b6feb5)
+)
+)
 
 ---
 
@@ -87,13 +89,14 @@ To set up the game locally:
 
 
 
-![Underwater Bubble Adventure GIF](https://media.giphy.com/media/3ohs4y5pyrzhlUJxhG/giphy.gif)
+![Underwater Bubble Adventure GIF]()
+)
 - Watch the official trailer for Underwater Bubble Adventure.
 ---
 
 ### 🎮 Play the Game Online:
 You can try the game directly from your browser:
-- [LIVE DEMO](https://yourwebsite.com)
+- [LIVE DEMO](https://yourwebsite.com
 
 # Enjoy the Adventure and Good Luck Catching Those Bubbles! 🌊🐋
 
