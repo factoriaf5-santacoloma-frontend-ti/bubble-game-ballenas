@@ -1,4 +1,4 @@
-import AFRAME from 'aframe';
+// import AFRAME from 'aframe';
 const corals = ["coral0", "coral1", "coral2", "coral3", "coral4", "coral5", "coral6", "coral7", "coral8", "coral9"];
 const scene = document.querySelector('a-scene');
 
