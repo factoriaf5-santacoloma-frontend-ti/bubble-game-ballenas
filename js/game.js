@@ -1,3 +1,4 @@
+import AFRAME from 'aframe';
 const corals = ["coral0", "coral1", "coral2", "coral3", "coral4", "coral5", "coral6", "coral7", "coral8", "coral9"];
 const scene = document.querySelector('a-scene');
 
@@ -27,7 +28,7 @@ function addCorals(coralRandom) {
     }
 }
 
-addCorals(200);
+addCorals(100);
 
 function addRandomAlga(numAlgas) {
     const scene = document.querySelector('a-scene');
@@ -52,7 +53,7 @@ function addRandomAlga(numAlgas) {
     }
 }
 
-addRandomAlga(40)
+addRandomAlga(20)
 
 function addRandomPeces(numPeces) {
     const scene = document.querySelector('a-scene');
@@ -71,53 +72,106 @@ function addRandomPeces(numPeces) {
       const y = Math.random() * 5 + 0.5; 
 
       pez.setAttribute('position', `${x} ${y} ${z}`);
-
+      
       
       scene.appendChild(pez);
     }
+  }
+  
+  addRandomPeces(4);
+  
+  AFRAME.registerComponent('visible-only-in-view', {
+    tick: function () {
+      const camera = document.querySelector('[camera]');
+      const objPosition = this.el.object3D.position;
+      const cameraPosition = camera.object3D.position;
+      const distance = cameraPosition.distanceTo(objPosition);
+  
+      // 如果物体太远，则隐藏
+      if (distance > 100) {
+        this.el.setAttribute('visible', 'false');
+      } else {
+        this.el.setAttribute('visible', 'true');
+      }
+    },
+  });
+
+  const medusas = [
+    { x: 0, y: 0.002, z: -30 },
+    { x: 0, y: 0.002, z: 30 },
+    { x: 30, y: 0.003, z: 0 },
+    { x: -30, y: 0.003, z: 0 },
+    { x: 20, y: 0.05, z: 20 },
+    { x: 20, y: 0.05, z: -20 },
+    { x: -20, y: 0.005, z: -20 },
+    { x: -20, y: 0.005, z: 20 },
+];
+  
+let score = 0;
+  
+// Función para inicializar las medusas
+function initScene() {
+  const orbitas = document.querySelectorAll('.orbit');
+
+  orbitas.forEach((orbit) => {
+      medusas.forEach((pos) => {
+          const medusa = document.createElement('a-entity');
+
+          medusa.setAttribute('gltf-model', '#medusas');
+          medusa.setAttribute('class', 'medusa');
+          medusa.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
+          medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');
+          medusa.setAttribute('animation-mixer', '');
+          medusa.setAttribute('shootable', '');
+
+          // 添加平滑游动动画
+          medusa.setAttribute('animation__move', `
+            property: position; 
+            to: ${pos.x + (Math.random() * 10 - 5)} ${pos.y + (Math.random() * 2 - 1)} ${pos.z + (Math.random() * 10 - 5)}; 
+            loop: true; 
+            dur: ${3000 + Math.random() * 2000}; 
+            easing: easeInOutSine; 
+            dir: alternate
+          `);
+
+          // 添加旋转动画
+          medusa.setAttribute('animation__rotate', `
+            property: rotation; 
+            to: 0 ${Math.random() * 360} 0; 
+            loop: true; 
+            dur: ${5000 + Math.random() * 2000}; 
+            easing: easeInOutSine; 
+            dir: alternate
+          `);
+
+          
+
+
+          orbit.appendChild(medusa);
+      });
+  });
 }
 
-addRandomPeces(10);
+  
+  // Llamar a la función después de que el DOM esté listo
+window.addEventListener('DOMContentLoaded', () => {
+    initScene();
+});
 
-const medusas = [
-    { x: 0, y: 0, z: -30 },    // Frente
-    { x: 0, y: 0, z: 30 },     // Atrás
-    { x: 30, y: 0, z: 0 },     // Derecha
-    { x: -30, y: 0, z: 0 },    // Izquierda
-    { x: 20, y: 0, z: 20 },    // Diagonal derecha atrás
-    { x: 20, y: 0, z: -20 },   // Diagonal derecha frente
-    { x: -20, y: 0, z: -20 },  // Diagonal izquierda frente
-    { x: -20, y: 0, z: 20 }    // Diagonal izquierda atrás
-  ];
+// Componente para interacción por clic
+AFRAME.registerComponent('shootable', {
+    // Método de inicialización del componente
+    init: function () {
+        // Añade un event listener para el evento 'click'
+        this.el.addEventListener('click', () => {
+            // Elimina el meteorito cuando es clickeado
+            this.el.parentNode.removeChild(this.el)
+            
+            // Incrementa y actualiza el contador de puntuación
+            document.querySelector('[text]').setAttribute('value', 
+                `${++score} medusas cazadas`)
+        })
+    }
+})
 
-  let score = 0;
-
-  // Función para inicializar las medusas en las órbitas
-  function initScene() {
-    const orbitas = document.querySelectorAll('.orbit');
-
-    orbitas.forEach(orbit => {
-      medusas.forEach(pos => {
-        const medusa = document.createElement('a-entity');  // Crear la medusa
-
-        medusa.setAttribute('gltf-model', '#medusas');
-        medusa.setAttribute('class', 'medusa');
-        medusa.object3D.position.set(pos.x, pos.y, pos.z);  // Posicionar la medusa
-        medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');  // Usar cuerpo dinámico pero sin gravedad
-
-        // Detectar la colisión entre la red y las medusas
-        medusa.addEventListener('collide', function (e) {
-          if (e.detail.body.el.id === 'red') {  // Verifica si la colisión es con la red
-            medusa.parentNode.removeChild(medusa);  // Eliminar la medusa
-            const scoreText = document.getElementById('score-text');  // Seleccionar el texto de puntuación
-            scoreText.setAttribute('value', `${++score} medusas cazadas`);  // Actualizar el puntaje
-          }
-        });
-
-        orbit.appendChild(medusa);  // Añadir la medusa a la órbita
-      });
-    });
-  }
-
-  // Llamar a la función de inicialización
-  initScene();
+  
