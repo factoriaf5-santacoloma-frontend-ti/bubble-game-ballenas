@@ -27,15 +27,8 @@ Ready to dive into the depths of the ocean? Click the button below to start your
 
 ---
 
-### 🐚 **Game Screenshots**:
 
-![Screenshot1](https://your-image-link1.com)
-*Explore the vibrant underwater world filled with colorful reefs.*
 
-![Screenshot2](https://your-image-link2.com)
-*Avoid dangerous jellyfish and other sea creatures while you swim!*
-
----
 
 ### 💡 **Technologies Used**:
 - **A-Frame**: [A-Frame Website](https://aframe.io) – For immersive VR and 3D rendering.
