@@ -2,7 +2,8 @@
 
 Welcome to the **Underwater Bubble Adventure**! 🌊 Dive deep into the ocean, collect magical bubbles, and avoid dangerous obstacles while exploring the mysterious underwater world. It's an exciting, fun-filled journey beneath the waves. Can you catch all the bubbles?
 
-Underwater Bubble Adventure GIF [Screenshot from 2024-12-02 10-24-22](https://github.com/user-attachments/assets/cce4b8b1-c9e1-45e5-b901-853984b6feb5)
+
+![Underwater Bubble Adventure GIF](![Screenshot from 2024-12-02 10-24-22](https://github.com/user-attachments/assets/247260cb-7da1-40a0-a94c-e96e1f724987)
 )
 )
 
