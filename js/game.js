@@ -174,4 +174,3 @@ AFRAME.registerComponent('shootable', {
     }
 })
 
-  
