@@ -89,7 +89,8 @@ To set up the game locally:
 
 
 
-![Underwater Bubble Adventure GIF]()
+![Underwater Bubble Adventure GIF](![images](https://github.com/user-attachments/assets/fe922cd4-78a8-45d6-ac71-622d96c3022b)
+)
 )
 - Watch the official trailer for Underwater Bubble Adventure.
 ---
