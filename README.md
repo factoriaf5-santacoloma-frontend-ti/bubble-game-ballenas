@@ -68,7 +68,7 @@ To set up the game locally:
     npm install
 3. **Start the local server to test the game**:
      ```bash
-    npm start
+    npm run dev
 
 
 ---
@@ -78,14 +78,7 @@ To set up the game locally:
 - **Realistic 3D Models**: Swim through beautiful coral reefs, interact with jellyfish, and observe the sea creatures.
 - **CSS**: For styling the interface and making it visually appealing.
 
----
-### 🔍 Screenshots of the Game:
- **Screenshots 1**:
 
-![Underwater Bubble Adventure GIF](https://media.giphy.com/media/3ohs4y5pyrzhlUJxhG/giphy.gif)
-
- **Screenshots 2**:
-     
 
 ---
 
