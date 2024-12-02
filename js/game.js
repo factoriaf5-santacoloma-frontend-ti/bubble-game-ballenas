@@ -122,6 +122,7 @@ function initScene() {
           medusa.setAttribute('position', `${pos.x} ${pos.y} ${pos.z}`);
           medusa.setAttribute('dynamic-body', 'shape: sphere; mass: 0');
           medusa.setAttribute('animation-mixer', '');
+          medusa.setAttribute('shootable', '');
 
           // 添加平滑游动动画
           medusa.setAttribute('animation__move', `
@@ -143,15 +144,8 @@ function initScene() {
             dir: alternate
           `);
 
-          medusa.addEventListener('collide', function (e) {
-              if (e.detail.body.el.id === 'red') {
-                  medusa.parentNode.removeChild(medusa);
-                  const scoreText = document.getElementById('score-text');
-                  if (scoreText) {
-                      scoreText.setAttribute('value', `${++score} medusas cazadas`);
-                  }
-              }
-          });
+          
+
 
           orbit.appendChild(medusa);
       });
@@ -166,14 +160,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // Componente para interacción por clic
 AFRAME.registerComponent('shootable', {
-init: function () {
-    this.el.addEventListener('click', () => {
-    const scoreText = document.getElementById('score-text');
-    if (scoreText) {
-        scoreText.setAttribute('value', `${++score} medusas cazadas`);
+    // Método de inicialización del componente
+    init: function () {
+        // Añade un event listener para el evento 'click'
+        this.el.addEventListener('click', () => {
+            // Elimina el meteorito cuando es clickeado
+            this.el.parentNode.removeChild(this.el)
+            
+            // Incrementa y actualiza el contador de puntuación
+            document.querySelector('[text]').setAttribute('value', 
+                `${++score} medusas cazadas`)
+        })
     }
-    this.el.parentNode.removeChild(this.el);
-    });
-},
-});
+})
+
   
