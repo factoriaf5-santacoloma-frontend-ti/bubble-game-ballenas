@@ -26,7 +26,7 @@ Welcome to the **Underwater Bubble Adventure**! 🌊 Dive deep into the ocean, c
 ### 🏁 **Start Your Adventure**:
 Ready to dive into the depths of the ocean? Click the button below to start your adventure!
 
-[Start Game](https://yourlink.com)
+[Start Game](https://factoriaf5-santacoloma-frontend-ti.github.io/bubble-game-ballenas/vistas/game.html)
 
 ---
 
