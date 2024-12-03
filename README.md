@@ -1,126 +1,116 @@
-# Experiencia Submarina Inmersiva
-Una empresa relacionada con videojuegos, quiere promocionarse en un coding fest. Para ello ha pensado en ofrecer una experiencia inmersiva e interactiva sobre el mundo submarino. Este proyecto creará una experiencia submarina inmersiva y entretenida utilizando A-Frame, permitiendo a los jugadores explorar un mundo submarino interactivo lleno de tesoros y secretos por descubrir.
+# 🌊 **Underwater Bubble Adventure** 🐋
 
-## **Objetivo**
-Crear una experiencia inmersiva submarina donde los jugadores, como buzos exploradores, interactúan con burbujas mágicas en un entorno acuático 3D.
-
-## **Flujo del Juego**
-1. **Burbujas Flotantes**  
-   - Las burbujas flotan naturalmente siguiendo corrientes submarinas predefinidas.
-2. **Interacción del Jugador**  
-   - El jugador, como buzo, apunta y hace clic sobre las burbujas para capturarlas.
-   - Cada burbuja capturada actualiza el marcador de "Burbujas obtenidas".
-3. **Objetivo Principal**  
-   - Recolectar la mayor cantidad de burbujas posible.
+Welcome to the **Underwater Bubble Adventure**! 🌊 Dive deep into the ocean, collect magical bubbles, and avoid dangerous obstacles while exploring the mysterious underwater world. It's an exciting, fun-filled journey beneath the waves. Can you catch all the bubbles?
 
 
-## **Interactividad**
-1. **Captura de Burbujas**  
-   - Las burbujas desaparecen con una animación de explosión acuática al hacer clic.
-   - El contador se actualiza dinámicamente.
-2. **Navegación**  
-   - El jugador explora el océano interactuando con el entorno usando el cursor o clics.
+![Underwater Bubble Adventure GIF](![Screenshot from 2024-12-02 10-24-22](https://github.com/user-attachments/assets/247260cb-7da1-40a0-a94c-e96e1f724987)
+)
+)
+
+---
+
+### 🚀 **Game Features**:
+- **🌊 Explore the Deep Ocean**: Dive deep and discover new areas full of surprises and hidden gems.
+- **🐋 Encounter a Blue Whale**: A majestic creature you can interact with in the depths.
+- **🎮 Addictive Gameplay**: The longer you stay underwater, the more exciting and challenging it becomes!
+
+---
+
+### 🎮 **How to Play**:
+1. **Dive into the Ocean**: Use the arrow keys to swim and explore the ocean.
+2. **Collect Bubbles**: Grab as many bubbles as you can to increase your score.
 
 
-## **Requerimientos Funcionales Obligatorios**
+---
 
-### **Entorno Submarino**
-- **Efectos de Agua y Luz**  
-  Crear un ambiente oceánico con texturas y filtros que simulen profundidad marina.
+### 🏁 **Start Your Adventure**:
+Ready to dive into the depths of the ocean? Click the button below to start your adventure!
 
-### **Ambiente Dinámico**
-- **Elementos Decorativos**  
-  Agregar objetos como algas, medusas y peces flotantes.
-- **Corrientes Marinas**  
-  Opcional: Implementar corrientes que afecten el movimiento de las burbujas.
+[Start Game](https://factoriaf5-santacoloma-frontend-ti.github.io/bubble-game-ballenas/vistas/game.html)
 
-### **Elementos Submarinos**
-Incluir al menos **2 objetos 3D**, como:
-- Corales de diferentes tipos.
-- Peces tropicales.
-- Tesoros hundidos.
-- Plantas marinas.
-- Formaciones rocosas.
-
-### **Burbujas Personalizadas**
-- **Características**  
-  - Tamaños variables.
-  - Movimientos flotantes naturales.
-
-### **Interacciones Submarinas**
-La aplicación debe incluir:
-- **Click**: Capturar burbujas.
-- **Scroll**: Ajustar la profundidad de buceo.
-- **Movimiento del Buzo**: Navegación fluida.
-
-#### Bonus:
-- Efecto visual de "pop" al capturar burbujas.
-- Sonidos submarinos.
-- Contador de tesoros descubiertos.
-
-## **Requerimientos**
-- Crea una homepage que muestre una presentación del juego.
-- Crea una página bubblegame que debe mostrar el juego.
-- Aplica estilos para que la web se vea moderna.
+---
 
 
-## **Requerimientos Técnicos**
-- **Metodología**: Scrum & Kanban.
-- **Control de Versiones**: GitFlow.
-- **Diseño Responsive**: Compatible con dispositivos móviles y escritorio.
-- **Efectos de Sonido**: Submarinos.
-
-#### **Bonus Track**
-- Colisiones entre burbujas y elementos marinos.
-- Tutorial interactivo de buceo.
 
 
-##  Modalidad
-- Trabajo en grupos de 2-3 personas.
-- Sprint de 1 semana
-- Presentación con feedback por escrito
+### 💡 **Technologies Used**:
+- **A-Frame**: [A-Frame Website](https://aframe.io) – For immersive VR and 3D rendering.
+- **JavaScript**: [MDN JavaScript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript) – For game mechanics and interactivity.
+- **GLTF Models**: [GLTF Documentation](https://www.khronos.org/gltf/) – For realistic 3D models like fish, whales, and coral reefs.
+- **CSS**: For styling the interface and making it visually appealing.
 
 
-## Rúbrica de Evaluación
+---
 
-| Criterio | Insuficiente | Aceptable | Excelente | 
-| --- | --- | --- | --- | 
-| Uso de HTML | No se utiliza HTML semántico, estructura desorganizada | Se utiliza HTML semántico básico, estructura clara | Se utiliza HTML semántico avanzado, estructura lógica y organizada | 
-| Uso de CSS | No se utiliza CSS, diseño visual pobre | Se utiliza CSS básico, diseño visual aceptable | Se utiliza CSS avanzado, diseño visual atractivo y coherente | | Uso de JavaScript | No se utiliza JavaScript, lógica de la aplicación pobre | Se utiliza JavaScript básico, lógica de la aplicación aceptable | Se utiliza JavaScript avanzado, lógica de la aplicación compleja y eficiente | 
-| Uso de componentes y entidades de A-Frame | No se utilizan componentes y entidades de A-Frame | Se utilizan componentes y entidades básicas de A-Frame (e.g. a-box, a-sphere) | Se utilizan componentes y entidades avanzadas de A-Frame (e.g. a-camera, a-light), creación de entidades personalizadas |
-| Gestión de la escena y la cámara | No se gestiona la escena y la cámara | Se gestiona la escena y la cámara de manera básica (e.g. posición, rotación) | Se gestiona la escena y la cámara de manera avanzada (e.g. animaciones, efectos de iluminación) | | Interacción y eventos | No se utilizan eventos de usuario | Se utilizan eventos de usuario básicos (e.g. click, hover) | Se utilizan eventos de usuario avanzados (e.g. drag, drop), creación de interacciones personalizadas y realistas | 
-| Optimización y rendimiento | No se optimiza el rendimiento | Se optimiza el rendimiento de manera básica (e.g. reducción de polígonos) | Se optimiza el rendimiento de manera avanzada (e.g. uso de técnicas de oclusion, reducción de carga de texturas) |
-| Experiencia de usuario | La experiencia de usuario es pobre | La experiencia de usuario es aceptable (e.g. se puede navegar por la escena) | La experiencia de usuario es excelente (e.g. se puede interactuar con objetos, se proporciona retroalimentación) | 
-| Código limpio y organizado | El código no está organizado ni limpio | El código está organizado y limpio de manera básica (e.g. se utilizan comentarios) | El código está organizado y limpio de manera avanzada (e.g. se utilizan convenciones de nombre y estructura de archivos claras) | 
-| Accesibilidad y compatibilidad | No se tiene en cuenta la accesibilidad y compatibilidad | Se tiene en cuenta la accesibilidad y compatibilidad de manera básica (e.g. se proporciona texto alternativo) | Se tiene en cuenta la accesibilidad y compatibilidad de manera avanzada (e.g. se proporciona navegación por teclado) | 
-| Trabajo en grupo | No se trabaja en equipo | Se trabaja en equipo de manera básica (e.g. se asignan tareas) | Se trabaja en equipo de manera avanzada (e.g. se utilizan herramientas de colaboración y comunicación efectivas) | 
-| Scrum y Kanban | No se utiliza Scrum o Kanban | Se utiliza Scrum o Kanban de manera básica (e.g. se crean tableros y listas de tareas) | Se utiliza Scrum o Kanban de manera avanzada (e.g. se planifica y se sigue el progreso del proyecto) | 
-| Requerimientos del proyecto | No se cumplen los requerimientos del proyecto | Se cumplen los requerimientos del proyecto de manera básica (e.g. se crea un entorno submarino) | Se cumplen los requerimientos del proyecto de manera avanzada (e.g. se crea un entorno submarino con interacciones y efectos visuales) |
+### 💬 **Join the Conversation**:
+If you have any questions, suggestions, or want to contribute to the game, feel free to open an issue or submit a pull request. Let’s build a better underwater adventure together!
 
-## **Entregables**
-1. **Repositorio con Documentación Completa**
-   - Descripción del mundo submarino.
-   - Stack tecnológico utilizado.
-   - Guía de instalación local.
-   - Créditos del equipo.
+---
 
+#### **Follow Us**:
+- [GitHub](https://github.com/yourusername)
+- [Twitter](https://twitter.com/yourhandle)
+- [Website](https://yourwebsite.com)
 
-## **Expectativas Técnicas**
-1. **Renderizado y Animación**: Uso de A-Frame.
-2. **Interactividad**: Experiencia fluida.
-3. **Optimización del Rendimiento**: Eficiencia en dispositivos diversos.
-4. **Accesibilidad Web**: Inclusión para todos los usuarios.
+---
 
-## **Documentación**
-- [A-Frame](https://aframe.io/)
-- [A-Frame en GitHub](https://github.com/aframevr/aframe/)
+### 🔧 **Development Instructions**:
+To set up the game locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/UnderwaterBubbleAdventure.git
+2. **Install dependencies**:
+     ```bash
+    npm install
+3. **Start the local server to test the game**:
+     ```bash
+    npm run dev
 
 
-## **Recursos**
-- [TurboSquid](https://www.turbosquid.com/es/)
-- [Sketchfab](https://sketchfab.com/)
-- [NASA 3D Models](https://nasa3d.arc.nasa.gov/)
+---
+
+### ✨   Features:
+- **Interactive Ocean Environment**: Explore an open-world ocean full of surprises and hidden gems.
+- **Realistic 3D Models**: Swim through beautiful coral reefs, interact with jellyfish, and observe the sea creatures.
+- **CSS**: For styling the interface and making it visually appealing.
 
 
-## **Ejemplo**
-- [Video Demostración](https://www.youtube.com/watch?v=GHzStTeFztM)
+
+---
+
+
+### 🛠️ Built With::
+- **A-Frame**:A-Frame Website – For immersive VR and 3D rendering
+- **JavaScript**:MDN JavaScript Docs – For game mechanics and interactivity.
+- **GLTF Models**:GLTF Documentation – For realistic 3D assets
+- **CSS:**:For styling the interface and game design.
+---
+### 📹 Game Trailer:
+
+
+
+![Underwater Bubble Adventure GIF](![images](https://github.com/user-attachments/assets/fe922cd4-78a8-45d6-ac71-622d96c3022b)
+)
+)
+- Watch the official trailer for Underwater Bubble Adventure.
+---
+
+### 🎮 Play the Game Online:
+You can try the game directly from your browser:
+- [LIVE DEMO](https://factoriaf5-santacoloma-frontend-ti.github.io/bubble-game-ballenas/)
+
+---
+## 👥 Autores
+- **[Jiale Chen](https://github.com/leng-108)**  
+  Encargado del diseño y estilos.
+  
+- **[Luisa Moreno](https://github.com/LuMorenoM)**  
+  Desarrolladora Web.
+
+- **[Deep Sembhi](https://github.com/Sembhiharsh)**  
+Desarrolladora Web.
+
+# Enjoy the Adventure and Good Luck Catching Those Bubbles! 🌊🐋
+
+
