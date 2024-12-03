@@ -98,7 +98,18 @@ To set up the game locally:
 
 ### 🎮 Play the Game Online:
 You can try the game directly from your browser:
-- [LIVE DEMO](https://yourwebsite.com
+- [LIVE DEMO](https://factoriaf5-santacoloma-frontend-ti.github.io/bubble-game-ballenas/)
+
+---
+## 👥 Autores
+- **[Jiale Chen](https://github.com/leng-108)**  
+  Encargado del diseño y estilos.
+  
+- **[Luisa Moreno](https://github.com/LuMorenoM)**  
+  Desarrolladora Web.
+
+-**[Deep Sembhi](https://github.com/Sembhiharsh)**  
+Desarrolladora Web.
 
 # Enjoy the Adventure and Good Luck Catching Those Bubbles! 🌊🐋
 
