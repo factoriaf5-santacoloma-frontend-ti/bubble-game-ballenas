@@ -108,7 +108,7 @@ You can try the game directly from your browser:
 - **[Luisa Moreno](https://github.com/LuMorenoM)**  
   Desarrolladora Web.
 
--**[Deep Sembhi](https://github.com/Sembhiharsh)**  
+- **[Deep Sembhi](https://github.com/Sembhiharsh)**  
 Desarrolladora Web.
 
 # Enjoy the Adventure and Good Luck Catching Those Bubbles! 🌊🐋
